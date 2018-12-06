@@ -11,7 +11,7 @@ class StorePicker extends Component {
   goToStore = (event) => {
     event.preventDefault();    // stop the form from submitting
     const storeName = this.myInput.value.value;
-    this.props.history.push(`/store/${this.storeName}`)
+    this.props.history.push(`/store/${storeName}`)
   }
 
   render() {

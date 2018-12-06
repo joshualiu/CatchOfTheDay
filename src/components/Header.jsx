@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 // a stateless functional component:
 const Header = props => (
