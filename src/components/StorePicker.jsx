@@ -2,17 +2,13 @@ import React, { Component, Fragment } from "react";
 import { getFunName } from "../helpers"; // generate a random fun store name
 
 class StorePicker extends Component {
-  constructor() {
-    super();
-    // this.goToStore = this.goToStore.bind(this)
-  }
   myInput = React.createRef();
 
-  goToStore = (event) => {
-    event.preventDefault();    // stop the form from submitting
+  goToStore = event => {
+    event.preventDefault(); // stop the form from submitting
     const storeName = this.myInput.value.value;
-    this.props.history.push(`/store/${storeName}`)
-  }
+    this.props.history.push(`/store/${storeName}`);
+  };
 
   render() {
     return (

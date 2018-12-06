@@ -11,7 +11,7 @@ class Fish extends Component {
           {name}
           <span className="price">{formatPrice(price)}</span>
         </h3>
-        <p>{desc}</p>
+        <p>{desc}</p> 
         <button>Add To Cart</button>
       </li>
     );
