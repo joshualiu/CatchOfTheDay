@@ -4,8 +4,9 @@ import { formatPrice } from "../helpers";
 class Order extends Component {
   renderOrder = key => {
     const fish = this.props.fishes[key];
+    if (!fish) return null;  // make sure the fish is loaded before continue
     const count = this.props.order[key];
-    const isAvailable = fish.state === "available";
+    const isAvailable = fish && fish.status === "available";
     if (!isAvailable) {
       return (
         <li key={key}>
@@ -33,7 +34,7 @@ class Order extends Component {
     }, 0);
 
     return (
-      <div className="order">
+      <div className="order-wrap">
         <h2>Order</h2>
         <ul className="order">{orderIds.map(this.renderOrder)}</ul>
         <div className="total">
