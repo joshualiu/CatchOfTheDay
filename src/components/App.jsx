@@ -13,7 +13,7 @@ class App extends Component {
       fishes: {},
       order: {}
     };
-  } 
+  }
 
   componentDidMount() {
     const { params } = this.props.match;
@@ -39,10 +39,21 @@ class App extends Component {
   }
 
   addFish = fish => {
+    // take a copy of the existing state
     const fishes = { ...this.state.fishes };
+    // add new fish to the fishes variable
     fishes[`fish${Date.now()}`] = fish;
+    //set new fishes object to state
     this.setState({ fishes });
-    console.log(this.state.fishes);
+  };
+
+  updateFish = (key, updatedFish) => {
+    // take copy of current state
+    const fishes = { ...this.state.fishes };
+    // update the state
+    fishes[key] = updatedFish;
+    // set it to state
+    this.setState({ fishes });
   };
 
   loadSampleFishes = () => {
@@ -74,7 +85,9 @@ class App extends Component {
         <Order fishes={this.state.fishes} order={this.state.order} />
         <Inventory
           addFish={this.addFish}
+          updatedFish={this.updateFish}
           loadSampleFishes={this.loadSampleFishes}
+          fishes={this.state.fishes}
         />
       </div>
     );
