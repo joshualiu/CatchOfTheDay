@@ -5,6 +5,7 @@ import Order from "./Order";
 import sampleFishes from "../sample-fishes";
 import Fish from "./Fish";
 import base from "../base";
+import PropTypes from "prop-types";
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,10 @@ class App extends Component {
       order: {}
     };
   }
+
+  static propTypes = {
+    match: PropTypes.object
+  };
 
   componentDidMount() {
     const { params } = this.props.match;

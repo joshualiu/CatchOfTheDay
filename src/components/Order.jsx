@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import { formatPrice } from "../helpers";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import PropTypes from "prop-types";
 
 class Order extends Component {
+  static propTypes = {
+    fishes: PropTypes.object,
+    order: PropTypes.object,
+    removeFromOrder: PropTypes.func
+  };
   renderOrder = key => {
     const fish = this.props.fishes[key];
     if (!fish) return null; // make sure the fish is loaded before continue
