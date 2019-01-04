@@ -43,7 +43,7 @@ class EditFishForm extends Component {
           value={this.props.fish.status}
         >
           <option value="available">Fresh!</option>
-          <option value="available">Sold Out!</option>
+          <option value="unavailable">Sold Out!</option>
         </select>
         <textarea
           name="desc"
